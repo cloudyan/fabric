@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
 import tsEslintConfig from './tsEslintConfig';
+import cookEslintConfig from './cook/eslintConfig';
 
 const parserOptions = {
   ecmaFeatures: {
@@ -116,6 +117,7 @@ module.exports = {
     'eslint-comments/no-unlimited-disable': 0,
     'no-param-reassign': 2,
     'space-before-function-paren': 0,
+    ...cookEslintConfig,
     ...(isTsProject ? tsEslintConfig : {}),
   },
   settings: {
